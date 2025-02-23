@@ -3,3 +3,6 @@ theme:
   name: material
   palette:
     primary: orange
+
+plugins:
+  - swagger-ui-tag
