@@ -32,21 +32,10 @@ List of addon to enable:
 * storage              # (core) Alias to hostpath-storage add-on, deprecated
 
 ## Architecture Diagram
-There is two namespaces on this schema: "common-ingress" and "super-chuck-norris".
+There is two namespaces on this schema: "common" and "super-chuck-norris".
 
 ![Alt docker](assets/k8s.drawio.png)
 
 Soon, other applications will be added, and I want to have a single entry point while isolating the applications from each other. 
-Thus, each application will have its own namespace with all the components, except for the ingress controller. 
-In order for the ingress controller to communicate with the backend service, for example, I had to add two services (backend and frontend) to interface everything.
-Source code of "External Backend service":
-```
-apiVersion: v1
-kind: Service
-metadata:
-  name: backend-chuck-service
-  namespace: common-namespace
-spec:
-  type: ExternalName
-  externalName: backend-chuck-service.super-chuck-norris.svc.cluster.local
-```
+Common namespace is just responsible for Persistent Volume
+Thus, each application will have its own namespace with all the components.
