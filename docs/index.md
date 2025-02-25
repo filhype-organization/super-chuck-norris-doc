@@ -5,7 +5,7 @@
 The Super Chuck Norris application is a web application that allows users to view Chuck Norris jokes.
 The goal of this project is to demonstrate how to create a modern web application using recent technologies.
 
-You can play with Chuck Norris [here](https://filhype.ovh/chuck-frontend/).
+You can play with Chuck Norris [here](https://chuck.filhype.ovh).
 
 ## Index
 * [Architecture documentation](architecture.md)
