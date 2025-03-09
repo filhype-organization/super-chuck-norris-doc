@@ -32,10 +32,8 @@ List of addon to enable:
 * storage              # (core) Alias to hostpath-storage add-on, deprecated
 
 ## Architecture Diagram
-There is two namespaces on this schema: "common" and "super-chuck-norris".
 
 ![Alt docker](assets/k8s.drawio.png)
 
-Soon, other applications will be added, and I want to have a single entry point while isolating the applications from each other. 
-Common namespace is just responsible for Persistent Volume
-Thus, each application will have its own namespace with all the components.
+The namespace needs to be set to "chuck-norris" due to the sealed secret.
+The database dump needs to be injected manually through a port redirection and psql.
