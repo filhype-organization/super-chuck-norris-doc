@@ -1,0 +1,109 @@
+---
+openapi: 3.1.0
+components:
+  schemas:
+    Joke:
+      type: object
+      required:
+      - joke
+      properties:
+        id:
+          $ref: "#/components/schemas/UUID"
+        created_at:
+          $ref: "#/components/schemas/LocalDateTime"
+        joke:
+          type: string
+          pattern: \S
+    LocalDateTime:
+      type: string
+      format: date-time
+      examples:
+      - 2022-03-10T12:15:50
+    PanacheEntityBase:
+      type: object
+    UUID:
+      type: string
+      format: uuid
+      pattern: "[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}"
+paths:
+  /api/jokes/v1:
+    put:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Joke"
+        required: true
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Joke"
+      summary: Update Joke
+      tags:
+      - Joke Resource
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Joke"
+        required: true
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Joke"
+      summary: Add Joke
+      tags:
+      - Joke Resource
+  /api/jokes/v1/getRandomJoke:
+    get:
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Joke"
+      summary: Get Random Joke
+      tags:
+      - Joke Resource
+  /api/jokes/v1/{id}:
+    get:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          $ref: "#/components/schemas/UUID"
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/PanacheEntityBase"
+      summary: Get Joke By Id
+      tags:
+      - Joke Resource
+    delete:
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          $ref: "#/components/schemas/UUID"
+      responses:
+        "204":
+          description: No Content
+      summary: Delete Joke
+      tags:
+      - Joke Resource
+info:
+  title: super-chuck-norris API
+  version: 1.0.3-SNAPSHOT
