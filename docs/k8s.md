@@ -37,3 +37,10 @@ List of addon to enable:
 
 The namespace needs to be set to "chuck-norris" due to the sealed secret.
 The database dump needs to be injected manually through a port redirection and psql.
+
+Port forwarding and inject dump:
+```bash
+kubectl port-forward -n chuck-norris <postgres-pod-name> 5432:5432
+psql -h localhost -p 5432 -U postgres -d chuck-db < /path/to/dump.sql
+```
+
