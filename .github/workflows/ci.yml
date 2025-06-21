@@ -17,3 +17,4 @@ jobs:
       mkdocs_requirements: 'mkdocs-material mkdocs-swagger-ui-tag'
     secrets:
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
