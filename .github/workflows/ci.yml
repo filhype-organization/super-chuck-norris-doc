@@ -11,7 +11,7 @@ permissions:
 
 jobs:
   build:
-    uses: filhype-organization/universal-devops-action/.github/workflows/github-actions.yml@test
+    uses: filhype-organization/universal-devops-action/.github/workflows/github-actions.yml@main
     with:
       enable_mkdocs_build: true
       mkdocs_requirements: 'mkdocs-material mkdocs-swagger-ui-tag'
