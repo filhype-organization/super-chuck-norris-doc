@@ -13,8 +13,11 @@
       
       
       
+        
+      
+      
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
@@ -22,10 +25,10 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -48,7 +51,6 @@
     
       
 
-    
     
     
   </head>
@@ -165,9 +167,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     Super Chuck Norris documentation
+  
+
     
   </span>
+  
   
 
       </a>
@@ -187,9 +194,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     Architecture
+  
+
     
   </span>
+  
   
 
       </a>
@@ -209,9 +221,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     Backend documentation
+  
+
     
   </span>
+  
   
 
       </a>
@@ -231,9 +248,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     Frontend documentation
+  
+
     
   </span>
+  
   
 
       </a>
@@ -262,9 +284,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     Kubernetes documentation
+  
+
     
   </span>
+  
   
 
           <span class="md-nav__icon md-icon"></span>
@@ -275,9 +302,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     Kubernetes documentation
+  
+
     
   </span>
+  
   
 
       </a>
@@ -300,7 +332,9 @@
         <li class="md-nav__item">
   <a href="#technical-stack" class="md-nav__link">
     <span class="md-ellipsis">
-      Technical stack
+      
+        Technical stack
+      
     </span>
   </a>
   
@@ -309,16 +343,181 @@
         <li class="md-nav__item">
   <a href="#requirements" class="md-nav__link">
     <span class="md-ellipsis">
-      Requirements
+      
+        Requirements
+      
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#installation" class="md-nav__link">
+  <a href="#cluster-nodes" class="md-nav__link">
     <span class="md-ellipsis">
-      Installation
+      
+        Cluster nodes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gitops-flow-fluxcd-timoni" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GitOps flow (FluxCD + Timoni)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="GitOps flow (FluxCD + Timoni)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#continuous-deployment-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Continuous Deployment pipeline
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modification-des-templates-timoni" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Modification des templates Timoni
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#premier-deploiement-bootstrap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Premier déploiement (bootstrap)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Premier déploiement (bootstrap)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prerequis-secrets-github" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prérequis secrets GitHub
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#appliquer-les-ressources-flux" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Appliquer les ressources Flux
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verifier-le-statut" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vérifier le statut
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#forcer-une-reconciliation-immediate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Forcer une réconciliation immédiate
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#initialisation-de-la-base-de-donnees" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Initialisation de la base de données
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#structure-du-module-timoni" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Structure du module Timoni
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Structure du module Timoni">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#images-docker" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Images Docker
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration-auth0" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration Auth0
+      
     </span>
   </a>
   
@@ -327,7 +526,9 @@
         <li class="md-nav__item">
   <a href="#architecture-diagram" class="md-nav__link">
     <span class="md-ellipsis">
-      Architecture Diagram
+      
+        Architecture Diagram
+      
     </span>
   </a>
   
@@ -370,7 +571,9 @@
         <li class="md-nav__item">
   <a href="#technical-stack" class="md-nav__link">
     <span class="md-ellipsis">
-      Technical stack
+      
+        Technical stack
+      
     </span>
   </a>
   
@@ -379,16 +582,181 @@
         <li class="md-nav__item">
   <a href="#requirements" class="md-nav__link">
     <span class="md-ellipsis">
-      Requirements
+      
+        Requirements
+      
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#installation" class="md-nav__link">
+  <a href="#cluster-nodes" class="md-nav__link">
     <span class="md-ellipsis">
-      Installation
+      
+        Cluster nodes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gitops-flow-fluxcd-timoni" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GitOps flow (FluxCD + Timoni)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="GitOps flow (FluxCD + Timoni)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#continuous-deployment-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Continuous Deployment pipeline
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modification-des-templates-timoni" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Modification des templates Timoni
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#premier-deploiement-bootstrap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Premier déploiement (bootstrap)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Premier déploiement (bootstrap)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prerequis-secrets-github" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prérequis secrets GitHub
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#appliquer-les-ressources-flux" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Appliquer les ressources Flux
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verifier-le-statut" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vérifier le statut
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#forcer-une-reconciliation-immediate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Forcer une réconciliation immédiate
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#initialisation-de-la-base-de-donnees" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Initialisation de la base de données
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#structure-du-module-timoni" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Structure du module Timoni
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Structure du module Timoni">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#images-docker" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Images Docker
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration-auth0" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration Auth0
+      
     </span>
   </a>
   
@@ -397,7 +765,9 @@
         <li class="md-nav__item">
   <a href="#architecture-diagram" class="md-nav__link">
     <span class="md-ellipsis">
-      Architecture Diagram
+      
+        Architecture Diagram
+      
     </span>
   </a>
   
@@ -413,6 +783,7 @@
           
           
             <div class="md-content" data-md-component="content">
+              
               <article class="md-content__inner md-typeset">
                 
                   
@@ -422,42 +793,225 @@
 <h1 id="kubernetes-documentation">Kubernetes documentation</h1>
 <h2 id="technical-stack">Technical stack</h2>
 <ul>
-<li>Container orchestration: Micro K8S</li>
-<li>Gest OS for K8S: Ubuntu ARM64</li>
+<li>Container orchestration: Kubernetes (kubeadm)</li>
+<li>OS: Ubuntu ARM64</li>
+<li>GitOps: FluxCD v2 (flux-operator)</li>
+<li>Package manager: Timoni (module OCI)</li>
+<li>Secrets: Sealed Secrets (Bitnami)</li>
+<li>Database: CloudNativePG</li>
 </ul>
 <h2 id="requirements">Requirements</h2>
 <ul>
-<li>All container and your software inside need to be compiled on ARM64 architecture</li>
-<li>A ARM64 VM</li>
-<li>A DNS and a Let's Encrypt configuration</li>
+<li>ARM64 nodes (all container images are built for <code>linux/arm64</code>)</li>
+<li>A DNS entry for <code>chuck.filhype.ovh</code></li>
+<li>cert-manager + ClusterIssuer <code>lets-encrypt</code></li>
+<li>nginx Ingress Controller</li>
+<li>Sealed Secrets controller in <code>kube-system</code></li>
+<li>CloudNativePG cluster <code>postgres</code> in namespace <code>postgres</code></li>
+<li>FluxCD v2 (flux-operator) deployed in namespace <code>operators</code></li>
 </ul>
-<h2 id="installation">Installation</h2>
-<p>I wanted to find hosting based on ARM64 for both financial and ecological reasons. After some research, I decided to go with <a href="https://www.hetzner.com/">Hetzner</a> for my VM order, as it was the cheapest option I found with hosting in Europe.
-I absolutely wanted a container orchestration based on K8S. I could have opted for a managed K8S service in a public cloud like AWS, but the exorbitant price quickly discouraged me. Therefore, I decided to use Micro K8S, which is compatible with ARM64. For the installation, I simply followed the official documentation.</p>
-<p>List of addon to enable:</p>
-<ul>
-<li>cert-manager         # (core) Cloud native certificate management</li>
-<li>community            # (core) The community addons repository</li>
-<li>dashboard            # (core) The Kubernetes dashboard</li>
-<li>dns                  # (core) CoreDNS</li>
-<li>ha-cluster           # (core) Configure high availability on the current node</li>
-<li>helm                 # (core) Helm - the package manager for Kubernetes</li>
-<li>helm3                # (core) Helm 3 - the package manager for Kubernetes</li>
-<li>hostpath-storage     # (core) Storage class; allocates storage from host directory</li>
-<li>ingress              # (core) Ingress controller for external access</li>
-<li>metrics-server       # (core) K8s Metrics Server for API access to service metrics</li>
-<li>observability        # (core) A lightweight observability stack for logs, traces and metrics</li>
-<li>registry             # (core) Private image registry exposed on localhost:32000</li>
-<li>storage              # (core) Alias to hostpath-storage add-on, deprecated</li>
-</ul>
+<h2 id="cluster-nodes">Cluster nodes</h2>
+<table>
+<thead>
+<tr>
+<th>Hostname</th>
+<th>Role</th>
+<th>IP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>hp</td>
+<td>control-plane</td>
+<td>192.168.1.23</td>
+</tr>
+<tr>
+<td>leeson-desktop</td>
+<td>worker</td>
+<td>192.168.1.26</td>
+</tr>
+<tr>
+<td>leeson-jetson2</td>
+<td>worker</td>
+<td>192.168.1.25</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="gitops-flow-fluxcd-timoni">GitOps flow (FluxCD + Timoni)</h2>
+<h3 id="architecture">Architecture</h3>
+<pre><code>GitHub                         Flux (operators ns)          Cluster
+──────────────────────         ───────────────────          ──────────────────────
+iac-chucknorris-backend   →    GitRepository            →   chuck-norris ns
+  deploy/                →      Kustomization            →    Namespace
+    configmap.yaml                                             ConfigMap
+    deployment.yaml                                           Deployment
+    service.yaml                                              Service
+    ingress.yaml                                              Ingress
+    auth0-sealed-secret                                       Secret (auth0)
+    db-sealed-secret                                          Secret (db)
+</code></pre>
+<h3 id="continuous-deployment-pipeline">Continuous Deployment pipeline</h3>
+<pre><code>1. Dev push → super-chuck-norris-backend (main)
+       ↓
+2. GitHub Actions: build native ARM64 image
+   → push docker.io/leeson77/chuck-norris-backend:&lt;sha&gt;-snapshot-arm64
+       ↓
+3. GitHub Actions job `update-iac`:
+   → checkout filhype-organization/iac-chucknorris-backend
+   → sed deploy/deployment.yaml: update image tag
+   → git commit &quot;chore: deploy backend image &lt;sha&gt;-snapshot-arm64 [skip ci]&quot;
+   → git push
+       ↓
+4. Flux GitRepository: détecte le nouveau commit (interval: 1m)
+       ↓
+5. Flux Kustomization: applique deploy/ sur le cluster (interval: 5m)
+       ↓
+6. K8s rolling-update: nouveau pod arm64 en ~20ms (native Quarkus)
+</code></pre>
+<h3 id="modification-des-templates-timoni">Modification des templates Timoni</h3>
+<p>Quand les fichiers CUE changent (<code>templates/</code>, <code>timoni.cue</code>, <code>values.cue</code>) :</p>
+<pre><code>1. Dev push → iac-chucknorris-backend (main)
+       ↓
+2. GitHub Actions job `publish-module`:
+   → push OCI module docker.io/leeson77/chuck-norris-backend-timoni:&lt;tag&gt;
+       ↓
+3. GitHub Actions job `render-manifests`:
+   → timoni build → réécrit deploy/{configmap,deployment,service,ingress}.yaml
+   → préserve le tag d'image courant dans deployment.yaml
+   → git commit &quot;chore: re-render manifests from timoni module [skip ci]&quot;
+       ↓
+4-6. Même flux Flux que ci-dessus
+</code></pre>
+<hr />
+<h2 id="premier-deploiement-bootstrap">Premier déploiement (bootstrap)</h2>
+<h3 id="prerequis-secrets-github">Prérequis secrets GitHub</h3>
+<p>Ajouter le secret <code>IAC_REPO_TOKEN</code> dans le repo <code>super-chuck-norris-backend</code> :</p>
+<pre><code>GitHub → super-chuck-norris-backend → Settings → Secrets → New repository secret
+  Name:  IAC_REPO_TOKEN
+  Value: &lt;GitHub PAT avec accès contents:write sur iac-chucknorris-backend&gt;
+</code></pre>
+<h3 id="appliquer-les-ressources-flux">Appliquer les ressources Flux</h3>
+<p>Les ressources FluxCD sont dans <code>flux/</code> du repo <code>iac-chucknorris-backend</code>.
+Elles sont <strong>déjà appliquées</strong> sur le cluster. Pour les ré-appliquer manuellement :</p>
+<pre><code class="language-bash">kubectl apply -f infra/k8s/backend/flux/gitrepository.yaml
+kubectl apply -f infra/k8s/backend/flux/kustomization.yaml
+</code></pre>
+<h3 id="verifier-le-statut">Vérifier le statut</h3>
+<pre><code class="language-bash"># État de la source Git
+kubectl get gitrepository iac-chucknorris-backend -n flux-system
+
+# État de la réconciliation
+kubectl get kustomization chuck-norris-backend -n flux-system
+
+# Ressources déployées
+kubectl get all -n chuck-norris
+</code></pre>
+<h3 id="forcer-une-reconciliation-immediate">Forcer une réconciliation immédiate</h3>
+<pre><code class="language-bash">kubectl annotate gitrepository iac-chucknorris-backend -n flux-system \
+  reconcile.fluxcd.io/requestedAt=&quot;$(date -u +%Y-%m-%dT%H:%M:%SZ)&quot; --overwrite
+</code></pre>
+<hr />
+<h2 id="initialisation-de-la-base-de-donnees">Initialisation de la base de données</h2>
+<p>La table <code>Joke</code> doit être créée avant le premier démarrage du backend
+(Hibernate est en mode <code>validate</code> — il vérifie le schéma sans le créer).</p>
+<pre><code class="language-bash"># Port-forward vers le pod PostgreSQL
+kubectl port-forward -n postgres postgres-1 5432:5432
+
+# Injecter le dump SQL
+psql -h localhost -p 5432 -U app -d app &lt; /path/to/dump.sql
+</code></pre>
+<p>Une fois le schéma injecté, le pod redémarre automatiquement et passe en <code>Running</code>.</p>
+<hr />
+<h2 id="structure-du-module-timoni">Structure du module Timoni</h2>
+<p>Le module se trouve dans le repo <code>iac-chucknorris-backend</code> :</p>
+<pre><code>infra/k8s/backend/
+├── timoni.cue           # Configuration du module (instance + labels communs)
+├── values.cue           # Schéma + valeurs par défaut
+├── prod-values.cue      # Surcharges de production (pas de secrets)
+├── templates/
+│   ├── configmap.cue    # ConfigMap Quarkus (variables d'env non-sensibles)
+│   ├── deployment.cue   # Deployment + probes + securityContext
+│   ├── service.cue      # ClusterIP service
+│   └── ingress.cue      # Ingress nginx + TLS cert-manager
+├── deploy/              # Manifestes K8s pré-rendus → Flux applique ce dossier
+│   ├── namespace.yaml
+│   ├── configmap.yaml
+│   ├── deployment.yaml  # Tag d'image mis à jour automatiquement par le CI
+│   ├── service.yaml
+│   ├── ingress.yaml
+│   ├── auth0-sealed-secret.yaml
+│   ├── db-sealed-secret.yaml
+│   └── kustomization.yaml
+└── flux/                # Ressources FluxCD (appliquées une fois manuellement)
+    ├── gitrepository.yaml
+    └── kustomization.yaml
+</code></pre>
+<h3 id="images-docker">Images Docker</h3>
+<table>
+<thead>
+<tr>
+<th>Image</th>
+<th>Registry</th>
+<th>Architecture</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>leeson77/chuck-norris-backend</code></td>
+<td>Docker Hub</td>
+<td>ARM64</td>
+</tr>
+<tr>
+<td><code>leeson77/chuck-norris-backend-timoni</code></td>
+<td>Docker Hub</td>
+<td>N/A (OCI module)</td>
+</tr>
+</tbody>
+</table>
+<p>Format du tag backend : <code>&lt;short-sha&gt;-snapshot-arm64</code> (ex: <code>3f04235-snapshot-arm64</code>)</p>
+<hr />
+<h2 id="configuration-auth0">Configuration Auth0</h2>
+<p>La configuration OIDC non-sensible est dans le ConfigMap <code>chuck-norris-backend-config</code>.
+Le secret (<code>QUARKUS_OIDC_CREDENTIALS_SECRET</code>) est chiffré dans <code>auth0-sealed-secret.yaml</code>
+et déchiffré automatiquement par le contrôleur Sealed Secrets.</p>
+<table>
+<thead>
+<tr>
+<th>Propriété</th>
+<th>Valeur</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Client ID</td>
+<td><code>2GSRAJdfhRYURWjwlnYwJlJN4J9cEi4o</code></td>
+</tr>
+<tr>
+<td>Issuer</td>
+<td><code>https://dev-lesson.eu.auth0.com/</code></td>
+</tr>
+<tr>
+<td>Auth Server URL</td>
+<td><code>https://dev-lesson.eu.auth0.com</code></td>
+</tr>
+<tr>
+<td>Audience</td>
+<td><code>chuck-norris-api</code></td>
+</tr>
+<tr>
+<td>Application type</td>
+<td><code>service</code></td>
+</tr>
+<tr>
+<td>Role claim path</td>
+<td><code>scope</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
 <h2 id="architecture-diagram">Architecture Diagram</h2>
 <p><img alt="Alt docker" src="../assets/k8s.drawio.png" /></p>
-<p>The namespace needs to be set to "chuck-norris" due to the sealed secret.
-The database dump needs to be injected manually through a port redirection and psql.</p>
-<p>Port forwarding and inject dump:</p>
-<pre><code class="language-bash">kubectl port-forward -n chuck-norris &lt;postgres-pod-name&gt; 5432:5432
-psql -h localhost -p 5432 -U postgres -d chuck-db &lt; /path/to/dump.sql
-</code></pre>
 
 
 
@@ -506,10 +1060,11 @@ psql -h localhost -p 5432 -U postgres -d chuck-db &lt; /path/to/dump.sql
     
     
       
-      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>
