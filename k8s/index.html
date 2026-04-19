@@ -363,6 +363,56 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#networking-stack-metallb-traefik" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Networking stack (MetalLB + Traefik)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Networking stack (MetalLB + Traefik)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#metallb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MetalLB
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#traefik" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Traefik
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reecriture-de-chemin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Réécriture de chemin
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#gitops-flow-fluxcd-timoni" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -379,6 +429,17 @@
     <span class="md-ellipsis">
       
         Architecture
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ordre-de-deploiement-dependson" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ordre de déploiement (dependsOn)
       
     </span>
   </a>
@@ -485,15 +546,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#structure-du-module-timoni" class="md-nav__link">
+  <a href="#structure-du-repo-iac" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Structure du module Timoni
+        Structure du repo IaC
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Structure du module Timoni">
+    <nav class="md-nav" aria-label="Structure du repo IaC">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -602,6 +663,56 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#networking-stack-metallb-traefik" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Networking stack (MetalLB + Traefik)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Networking stack (MetalLB + Traefik)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#metallb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MetalLB
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#traefik" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Traefik
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reecriture-de-chemin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Réécriture de chemin
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#gitops-flow-fluxcd-timoni" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -618,6 +729,17 @@
     <span class="md-ellipsis">
       
         Architecture
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ordre-de-deploiement-dependson" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ordre de déploiement (dependsOn)
       
     </span>
   </a>
@@ -724,15 +846,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#structure-du-module-timoni" class="md-nav__link">
+  <a href="#structure-du-repo-iac" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Structure du module Timoni
+        Structure du repo IaC
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Structure du module Timoni">
+    <nav class="md-nav" aria-label="Structure du repo IaC">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -799,13 +921,16 @@
 <li>Package manager: Timoni (module OCI)</li>
 <li>Secrets: Sealed Secrets (Bitnami)</li>
 <li>Database: CloudNativePG</li>
+<li>Load Balancer: MetalLB (L2 mode)</li>
+<li>Ingress Controller: Traefik v3</li>
 </ul>
 <h2 id="requirements">Requirements</h2>
 <ul>
 <li>ARM64 nodes (all container images are built for <code>linux/arm64</code>)</li>
 <li>A DNS entry for <code>chuck.filhype.ovh</code></li>
 <li>cert-manager + ClusterIssuer <code>lets-encrypt</code></li>
-<li>nginx Ingress Controller</li>
+<li>MetalLB deployed in <code>metallb-system</code> (géré par Flux)</li>
+<li>Traefik deployed in <code>ingress</code> (géré par Flux)</li>
 <li>Sealed Secrets controller in <code>kube-system</code></li>
 <li>CloudNativePG cluster <code>postgres</code> in namespace <code>postgres</code></li>
 <li>FluxCD v2 (flux-operator) deployed in namespace <code>operators</code></li>
@@ -838,29 +963,95 @@
 </tbody>
 </table>
 <hr />
+<h2 id="networking-stack-metallb-traefik">Networking stack (MetalLB + Traefik)</h2>
+<h3 id="metallb">MetalLB</h3>
+<p>MetalLB fournit un LoadBalancer logiciel en mode L2 pour les clusters bare-metal.</p>
+<table>
+<thead>
+<tr>
+<th>Paramètre</th>
+<th>Valeur</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Namespace</td>
+<td><code>metallb-system</code></td>
+</tr>
+<tr>
+<td>Mode</td>
+<td>L2 Advertisement</td>
+</tr>
+<tr>
+<td>IP pool</td>
+<td><code>192.168.1.200 – 192.168.1.210</code></td>
+</tr>
+</tbody>
+</table>
+<p>Le pool d'IPs doit être en dehors de la plage DHCP du routeur. L'IP assignée à Traefik sera l'adresse publique du cluster sur le réseau local.</p>
+<h3 id="traefik">Traefik</h3>
+<p>Traefik est le contrôleur d'ingress déployé via Helm dans le namespace <code>ingress</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Paramètre</th>
+<th>Valeur</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Namespace</td>
+<td><code>ingress</code></td>
+</tr>
+<tr>
+<td>IngressClass</td>
+<td><code>traefik</code> (défaut)</td>
+</tr>
+<tr>
+<td>Entrypoints</td>
+<td><code>web</code> (80), <code>websecure</code> (443)</td>
+</tr>
+<tr>
+<td>Service type</td>
+<td><code>LoadBalancer</code> (IP assignée par MetalLB)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="reecriture-de-chemin">Réécriture de chemin</h3>
+<p>Le backend Quarkus sert ses endpoints à la racine (<code>/</code>). L'ingress expose le service sous <code>/api</code>. La réécriture est effectuée par un <strong>Middleware Traefik</strong> <code>strip-api-prefix</code> dans le namespace <code>chuck-norris</code> :</p>
+<pre><code>/api        → /
+/api/jokes  → /jokes
+</code></pre>
+<p>Annotation ingress :</p>
+<pre><code class="language-yaml">traefik.ingress.kubernetes.io/router.middlewares: chuck-norris-strip-api-prefix@kubernetescrd
+</code></pre>
+<hr />
 <h2 id="gitops-flow-fluxcd-timoni">GitOps flow (FluxCD + Timoni)</h2>
 <h3 id="architecture">Architecture</h3>
-<pre><code>GitHub                         Flux (operators ns)          Cluster
-──────────────────────         ───────────────────          ──────────────────────
-iac-chucknorris-backend   →    GitRepository            →   chuck-norris ns
-  deploy/                →      Kustomization            →    Namespace
-    configmap.yaml                                             ConfigMap
-    deployment.yaml                                           Deployment
-    service.yaml                                              Service
-    ingress.yaml                                              Ingress
-    auth0-sealed-secret                                       Secret (auth0)
-    db-sealed-secret                                          Secret (db)
+<pre><code>GitHub                         Flux (operators ns)              Cluster
+──────────────────────         ──────────────────────────       ──────────────────────
+iac-chucknorris-backend   →    GitRepository
+  infra/metallb/          →      Kustomization infra-metallb     → metallb-system ns
+  infra/metallb-config/   →      Kustomization infra-metallb-config
+  infra/traefik/          →      Kustomization infra-traefik     → ingress ns
+  deploy/                 →      Kustomization chuck-norris-backend → chuck-norris ns
+</code></pre>
+<h3 id="ordre-de-deploiement-dependson">Ordre de déploiement (dependsOn)</h3>
+<pre><code>infra-metallb
+    └→ infra-metallb-config   (attend que MetalLB soit prêt + CRDs installés)
+           └→ infra-traefik   (attend que le pool IP soit configuré)
+                  └→ chuck-norris-backend
 </code></pre>
 <h3 id="continuous-deployment-pipeline">Continuous Deployment pipeline</h3>
 <pre><code>1. Dev push → super-chuck-norris-backend (main)
        ↓
-2. GitHub Actions: build native ARM64 image
-   → push docker.io/leeson77/chuck-norris-backend:&lt;sha&gt;-snapshot-arm64
+2. GitHub Actions: build native multi-arch image (amd64 + arm64)
+   → push docker.io/leeson77/chuck-norris-backend:&lt;sha&gt;
        ↓
 3. GitHub Actions job `update-iac`:
    → checkout filhype-organization/iac-chucknorris-backend
    → sed deploy/deployment.yaml: update image tag
-   → git commit &quot;chore: deploy backend image &lt;sha&gt;-snapshot-arm64 [skip ci]&quot;
+   → git commit &quot;chore: deploy backend image &lt;sha&gt; [skip ci]&quot;
    → git push
        ↓
 4. Flux GitRepository: détecte le nouveau commit (interval: 1m)
@@ -873,39 +1064,48 @@ iac-chucknorris-backend   →    GitRepository            →   chuck-norris ns
 <p>Quand les fichiers CUE changent (<code>templates/</code>, <code>timoni.cue</code>, <code>values.cue</code>) :</p>
 <pre><code>1. Dev push → iac-chucknorris-backend (main)
        ↓
-2. GitHub Actions job `publish-module`:
-   → push OCI module docker.io/leeson77/chuck-norris-backend-timoni:&lt;tag&gt;
-       ↓
-3. GitHub Actions job `render-manifests`:
-   → timoni build → réécrit deploy/{configmap,deployment,service,ingress}.yaml
+2. GitHub Actions job `render-manifests`:
+   → timoni build → réécrit deploy/{configmap,deployment,service,ingress,middleware}.yaml
    → préserve le tag d'image courant dans deployment.yaml
    → git commit &quot;chore: re-render manifests from timoni module [skip ci]&quot;
        ↓
-4-6. Même flux Flux que ci-dessus
+3-6. Même flux Flux que ci-dessus
 </code></pre>
 <hr />
 <h2 id="premier-deploiement-bootstrap">Premier déploiement (bootstrap)</h2>
 <h3 id="prerequis-secrets-github">Prérequis secrets GitHub</h3>
 <p>Ajouter le secret <code>IAC_REPO_TOKEN</code> dans le repo <code>super-chuck-norris-backend</code> :</p>
-<pre><code>GitHub → super-chuck-norris-backend → Settings → Secrets → New repository secret
-  Name:  IAC_REPO_TOKEN
-  Value: &lt;GitHub PAT avec accès contents:write sur iac-chucknorris-backend&gt;
+<pre><code class="language-bash">gh secret set IAC_REPO_TOKEN --repo filhype-organization/super-chuck-norris-backend
+# Valeur : GitHub fine-grained PAT avec Contents: Read &amp; Write sur iac-chucknorris-backend
 </code></pre>
 <h3 id="appliquer-les-ressources-flux">Appliquer les ressources Flux</h3>
 <p>Les ressources FluxCD sont dans <code>flux/</code> du repo <code>iac-chucknorris-backend</code>.
-Elles sont <strong>déjà appliquées</strong> sur le cluster. Pour les ré-appliquer manuellement :</p>
-<pre><code class="language-bash">kubectl apply -f infra/k8s/backend/flux/gitrepository.yaml
-kubectl apply -f infra/k8s/backend/flux/kustomization.yaml
+À appliquer <strong>dans l'ordre</strong> la première fois :</p>
+<pre><code class="language-bash"># Source Git
+kubectl apply -f flux/gitrepository.yaml
+
+# Infrastructure (ordre important)
+kubectl apply -f flux/infra-metallb.yaml
+kubectl apply -f flux/infra-metallb-config.yaml
+kubectl apply -f flux/infra-traefik.yaml
+
+# Application
+kubectl apply -f flux/kustomization.yaml
 </code></pre>
 <h3 id="verifier-le-statut">Vérifier le statut</h3>
-<pre><code class="language-bash"># État de la source Git
-kubectl get gitrepository iac-chucknorris-backend -n flux-system
+<pre><code class="language-bash"># État de toutes les Kustomizations
+kubectl get kustomization -n flux-system
 
-# État de la réconciliation
-kubectl get kustomization chuck-norris-backend -n flux-system
+# État des HelmReleases
+kubectl get helmrelease -n flux-system
 
-# Ressources déployées
+# Ressources ingress
+kubectl get all -n ingress
+kubectl get all -n metallb-system
+
+# Ressources application
 kubectl get all -n chuck-norris
+kubectl get ingress -n chuck-norris
 </code></pre>
 <h3 id="forcer-une-reconciliation-immediate">Forcer une réconciliation immédiate</h3>
 <pre><code class="language-bash">kubectl annotate gitrepository iac-chucknorris-backend -n flux-system \
@@ -923,29 +1123,36 @@ psql -h localhost -p 5432 -U app -d app &lt; /path/to/dump.sql
 </code></pre>
 <p>Une fois le schéma injecté, le pod redémarre automatiquement et passe en <code>Running</code>.</p>
 <hr />
-<h2 id="structure-du-module-timoni">Structure du module Timoni</h2>
-<p>Le module se trouve dans le repo <code>iac-chucknorris-backend</code> :</p>
-<pre><code>infra/k8s/backend/
-├── timoni.cue           # Configuration du module (instance + labels communs)
+<h2 id="structure-du-repo-iac">Structure du repo IaC</h2>
+<pre><code>iac-chucknorris-backend/
+├── timoni.cue           # Configuration du module Timoni
 ├── values.cue           # Schéma + valeurs par défaut
-├── prod-values.cue      # Surcharges de production (pas de secrets)
+├── prod-values.cue      # Surcharges de production
 ├── templates/
 │   ├── configmap.cue    # ConfigMap Quarkus (variables d'env non-sensibles)
 │   ├── deployment.cue   # Deployment + probes + securityContext
 │   ├── service.cue      # ClusterIP service
-│   └── ingress.cue      # Ingress nginx + TLS cert-manager
+│   └── ingress.cue      # Ingress Traefik + TLS cert-manager
 ├── deploy/              # Manifestes K8s pré-rendus → Flux applique ce dossier
 │   ├── namespace.yaml
 │   ├── configmap.yaml
 │   ├── deployment.yaml  # Tag d'image mis à jour automatiquement par le CI
 │   ├── service.yaml
+│   ├── middleware.yaml  # Traefik Middleware: strip-api-prefix (/api → /)
 │   ├── ingress.yaml
 │   ├── auth0-sealed-secret.yaml
 │   ├── db-sealed-secret.yaml
 │   └── kustomization.yaml
+├── infra/
+│   ├── metallb/         # HelmRelease MetalLB + namespace
+│   ├── metallb-config/  # IPAddressPool + L2Advertisement
+│   └── traefik/         # HelmRelease Traefik + namespace
 └── flux/                # Ressources FluxCD (appliquées une fois manuellement)
     ├── gitrepository.yaml
-    └── kustomization.yaml
+    ├── kustomization.yaml        # App (dependsOn: infra-traefik)
+    ├── infra-metallb.yaml
+    ├── infra-metallb-config.yaml
+    └── infra-traefik.yaml
 </code></pre>
 <h3 id="images-docker">Images Docker</h3>
 <table>
@@ -960,7 +1167,7 @@ psql -h localhost -p 5432 -U app -d app &lt; /path/to/dump.sql
 <tr>
 <td><code>leeson77/chuck-norris-backend</code></td>
 <td>Docker Hub</td>
-<td>ARM64</td>
+<td>multi-arch (amd64 + arm64)</td>
 </tr>
 <tr>
 <td><code>leeson77/chuck-norris-backend-timoni</code></td>
@@ -969,7 +1176,7 @@ psql -h localhost -p 5432 -U app -d app &lt; /path/to/dump.sql
 </tr>
 </tbody>
 </table>
-<p>Format du tag backend : <code>&lt;short-sha&gt;-snapshot-arm64</code> (ex: <code>3f04235-snapshot-arm64</code>)</p>
+<p>Format du tag backend : <code>&lt;short-sha&gt;</code> (ex: <code>3953622</code>)</p>
 <hr />
 <h2 id="configuration-auth0">Configuration Auth0</h2>
 <p>La configuration OIDC non-sensible est dans le ConfigMap <code>chuck-norris-backend-config</code>.
